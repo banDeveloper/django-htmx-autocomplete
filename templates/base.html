@@ -1,0 +1,23 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{% block head_title %}Django HTMX{% endblock %}</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="preload" as="style">
+    <link href="https://unpkg.com/htmx.org@1.5.0" rel="preload" as="script">
+    {% block extra_head %}
+    {% endblock extra_head %}
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    
+</head>
+<body>
+    {% block content %}
+    {% endblock content %}
+    {% block extra_body %}    
+    {% endblock extra_body %}   
+    <script src="https://unpkg.com/htmx.org@1.5.0"></script>  
+</body>
+</html>

@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mx-auto py-24">
+    <div class="grid grid-cols-3 gap-4">
+        <div class="">
+            <form class="pb-6">
+                {% csrf_token %}
+                <div class="text-xl text-green-600">
+                    Search countries, return all results
+                </div>
+                <input type="text" 
+                    class="border rounded text-gray-500 px-1"
+                    name="search"
+                    placeholder="Begin typing to search countries"
+                    hx-post="search-all/"
+                    hx-trigger="keyup changed delay:500ms"
+                    hx-target="#search-results-all"
+                >
+            </form>    
+            <div class="">
+                <div class="font-bold text-red-600">Country name:</div>
+                <div id="search-results-all"></div> 
+            </div>
+        </div>
+        <div class="">
+            <form class="pb-6">
+                {% csrf_token %}
+                <div class="text-xl text-green-600">
+                    Search countries, return first result
+                </div>
+                <input type="text" 
+                    class="border rounded text-gray-500 px-1"
+                    name="search"
+                    placeholder="Begin typing to search countries"
+                    hx-post="search-one/"
+                    hx-trigger="keyup changed delay:500ms"
+                    hx-target="#search-results-one"
+                >
+            </form>    
+            <div class="">
+                <div class="font-bold text-red-600">Country name:</div>
+                <div id="search-results-one"></div> 
+            </div>
+        </div>
+        <div class="">
+            <form class="pb-6">
+                {% csrf_token %}
+                <div class="text-xl text-green-600">
+                    Search countries, populate option
+                </div>
+                <input type="text" 
+                    class="border rounded text-gray-500 px-1 mb-6"
+                    name="search"
+                    placeholder="Begin typing to search countries"
+                    hx-post="search-option/"
+                    hx-trigger="keyup changed delay:500ms"
+                    hx-target="#search-results-option"
+                >                                   
+                <div id="search-results-option"></div> 
+            </form>            
+        </div>
+    </div>
+    
+</div>    
+{% endblock content %}

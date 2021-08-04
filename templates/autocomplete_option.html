@@ -1,0 +1,15 @@
+<div class="text-lg text-green-600">
+    Choose a country to populate cities
+</div>
+<select name="country" 
+    class="border rounded mb-6"
+    hx-trigger="change"
+    hx-post="search-cities/"
+    hx-target="#cities"
+>
+    {% for country in countries %}
+    <option value="{{ country }}">{{ country }}</option>
+    {% endfor %}
+</select>
+<div class="font-bold text-red-600">City name:</div>
+<div id="cities"></div>
